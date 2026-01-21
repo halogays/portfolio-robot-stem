@@ -11,112 +11,172 @@
     <div class="container">
       <p class="badge">Portfolio Proyek STEM</p>
       <h1>Smart Distance Tracker</h1>
-      <p class="subtitle">Sistem Keamanan Kendaraan Otonom Berbasis Studuino.</p>
+      <p class="subtitle">Prototipe Sistem Keamanan Kendaraan Otonom dengan Notifikasi Audiovisual Berbasis Studuino.</p>
 
       <div class="meta">
         <div><span>Tim:</span> Ferdinandus, Leonni, Keyko, Valentino, Christian</div>
+        <div><span>Kelas:</span> (Isi Kelas Kamu)</div>
         <div><span>Platform:</span> ArTec & Studuino</div>
       </div>
 
       <nav class="nav">
         <a href="#showcase">Showcase</a>
         <a href="#stem">Pendekatan STEM</a>
+        <a href="#media">Media</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
     <section id="showcase" class="card">
-      <h2>Isi Portfolio Showcase</h2>
+      <h2>A) Isi Portfolio Showcase</h2>
 
       <details open>
         <summary>1. Pengenalan Proyek</summary>
         <div class="content">
-          <h3>Latar belakang masalah</h3>
-          <p>Kebutuhan alat transportasi otomatis yang mampu mengukur jarak mandiri untuk menghindari tabrakan melalui peringatan dini.</p>
-          <h3>Fitur Utama</h3>
+          <h3>Alat yang Dibuat</h3>
+          <p>Smart Distance Tracker menggunakan kit ArTec Robo dan Studuino Motherboard.</p>
+          <h3>Fitur / Manfaat Alat</h3>
           <ul>
-            <li>Safety Auto-Stop (Berhenti otomatis).</li>
-            <li>Alarm Audiovisual (Buzzer & LED).</li>
+            <li>Mendeteksi jarak objek di depan secara real-time.</li>
+            <li>Memberikan peringatan suara (Buzzer) dan cahaya (LED) saat jarak tidak aman.</li>
+            <li>Sistem pengereman otomatis (Auto-Stop) untuk menghindari benturan fisik.</li>
           </ul>
+          <h3>Topik STEM Terintegrasi</h3>
+          <p>Fisika (Besaran & Pengukuran), Teknologi (Robotika), Engineering (Desain Purwarupa), dan Matematika (Operasi Hitung & Logika).</p>
         </div>
       </details>
 
       <details>
         <summary>2. Tahap Perencanaan</summary>
         <div class="content">
-          <h3>Identifikasi & Logika</h3>
-          <p>Bagaimana sistem memproses input jarak menjadi aksi keamanan. Berikut adalah alur logika yang kami rencanakan:</p>
-          
-          <figure class="integrated-photo">
-            <img src="assets/flowchart.jpg" alt="Flowchart Program" style="max-width: 100%; border-radius: 8px;">
-            <figcaption><i>Gambar 1: Flowchart alur logika Smart Distance Tracker.</i></figcaption>
-          </figure>
-
-          <h3>Teori Sains</h3>
-          <p>Memanfaatkan prinsip optik pada sensor Photoreflector untuk mengukur intensitas pantulan infra merah.</p>
+          <h3>Identifikasi Masalah</h3>
+          <p>Bagaimana menciptakan sistem transportasi yang aman dengan memanfaatkan sensor infra merah untuk meminimalisir kecelakaan akibat kelalaian manusia?</p>
+          <h3>Teori Sains yang Diterapkan</h3>
+          <p>Memanfaatkan prinsip optik pada sensor Photoreflector, di mana sinar infra merah dipancarkan dan dipantulkan kembali oleh objek untuk diukur intensitasnya.</p>
+          <h3>Alat & Bahan</h3>
+          <ul>
+            <li>Studuino Motherboard & Battery Box.</li>
+            <li>2 DC Motors & ArTec Blocks (Bodi Robot).</li>
+            <li>1 IR Photoreflector, 1 Buzzer, 1 Red LED.</li>
+          </ul>
+          <h3>Dokumentasi Perencanaan</h3>
+          <p>Mengacu pada LKS Fisika dan daftar pustaka terkait sensor jarak.</p>
         </div>
       </details>
 
       <details>
         <summary>3. Desain & Prototyping</summary>
         <div class="content">
-          <h3>Sketsa & Bentuk Fisik</h3>
-          <p>Kami merancang bodi robot menggunakan Artec Blocks agar modular dan kokoh.</p>
-
-          <div class="grid2">
-            <figure>
-              <img src="assets/sketsa.jpg" alt="Sketsa Robot" style="width: 100%; border-radius: 8px;">
-              <figcaption><i>Gambar 2: Sketsa awal desain robot.</i></figcaption>
-            </figure>
-            <figure>
-              <img src="assets/robot.jpg" alt="Robot Fisik" style="width: 100%; border-radius: 8px;">
-              <figcaption><i>Gambar 3: Purwarupa fisik Smart Distance Tracker.</i></figcaption>
-            </figure>
-          </div>
+          <h3>Sketsa Robot</h3>
+          <p>Desain menggunakan roda dua (2WD) dengan sensor diletakkan di bagian depan paling menonjol untuk deteksi dini rintangan.</p>
+          <h3>Arsitektur Sistem (Input–Process–Output)</h3>
+          <ul>
+            <li><b>Input:</b> Nilai intensitas cahaya dari IR Photoreflector.</li>
+            <li><b>Process:</b> Komparasi nilai input dengan ambang batas (Threshold) di Studuino.</li>
+            <li><b>Output:</b> Aktivasi Buzzer, LED, dan perintah stop pada Motor.</li>
+          </ul>
         </div>
       </details>
 
       <details>
         <summary>4. Implementasi & Coding</summary>
         <div class="content">
-          <h3>Pemrograman Studuino</h3>
-          <p>Implementasi logika "Jika Sensor > 7" menggunakan pemrograman blok Studuino untuk mengontrol Buzzer, LED, dan Motor.</p>
-
-          <figure class="integrated-photo">
-            <img src="assets/kode.jpg" alt="Kode Studuino" style="max-width: 100%; border-radius: 8px;">
-            <figcaption><i>Gambar 4: Implementasi kode blok pada software Studuino.</i></figcaption>
-          </figure>
+          <h3>Tahap Perakitan</h3>
+          <p>Penyusunan blok Artec dilakukan secara modular, dilanjutkan dengan wiring sensor ke Port A1, LED ke Port A0, dan Buzzer ke Port A2.</p>
+          <h3>Alur Program & Flowchart</h3>
+          <p>Program berjalan dalam loop (forever). Sensor terus membaca jarak. Jika nilai > 7, sistem masuk ke mode waspada (Alarm ON & Stop).</p>
+          <h3>Dokumentasi</h3>
+          <p>Tersedia foto rangkaian kabel dan log debugging dari aplikasi Studuino.</p>
         </div>
       </details>
 
       <details>
-        <summary>5. Testing & Tim</summary>
+        <summary>5. Testing & Evaluasi</summary>
         <div class="content">
-          <h3>Evaluasi</h3>
-          <p>Robot berhasil berhenti dan alarm menyala saat sensor mendeteksi nilai di atas ambang batas (7).</p>
-          <h3>Anggota Tim</h3>
+          <h3>Skenario Pengujian</h3>
           <ul>
-            <li><b>Ferdinandus, Leonni, Keyko, Valentino, Christian.</b></li>
+            <li>Pengujian deteksi objek pada berbagai jarak (dekat, sedang, jauh).</li>
+            <li>Pengujian kecepatan respon rem motor saat buzzer aktif.</li>
           </ul>
+          <h3>Perhitungan Error Relatif</h3>
+          <p>Dilakukan kalibrasi nilai sensor terhadap jarak nyata untuk mendapatkan akurasi optimal.</p>
+          <h3>Masalah & Solusi</h3>
+          <p><b>Masalah:</b> Sensor kadang terganggu cahaya ruangan. <b>Solusi:</b> Menyesuaikan nilai Threshold pada kode program.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>6. Tim & Refleksi</summary>
+        <div class="content">
+          <h3>Data Anggota Tim</h3>
+          <ul>
+            <li><b>Ferdinandus</b> — Coding & Web Development</li>
+            <li><b>Leonni</b> — Web Logic & Algorithm</li>
+            <li><b>Keyko</b> — Hardware Assembly</li>
+            <li><b>Valentino</b> — Mechanical Design</li>
+            <li><b>Christian</b> — Documentation & Testing</li>
+          </ul>
+          <h3>Refleksi & Saran</h3>
+          <p>Tantangan utama adalah menyelaraskan deteksi sensor dengan pengereman motor. Saran: Penambahan sensor ultrasonik untuk jangkauan yang lebih luas.</p>
           <blockquote>"Prototipe pertama jarang langsung sempurna; data uji yang bikin desain jadi matang."</blockquote>
         </div>
       </details>
     </section>
 
     <section id="stem" class="card">
-      <h2>Pendekatan STEM</h2>
+      <h2>B) Pendekatan STEM</h2>
       <div class="stem-grid">
-        <div class="stem-card"><h3>Science</h3><p>Besaran & Pengukuran Jarak.</p></div>
-        <div class="stem-card"><h3>Technology</h3><p>Artec Robo & Studuino.</p></div>
-        <div class="stem-card"><h3>Engineering</h3><p>Desain Purwarupa Robot.</p></div>
-        <div class="stem-card"><h3>Mathematics</h3><p>Operasi Hitung & Logika.</p></div>
+        <div class="stem-card">
+          <h3>Science (S)</h3>
+          <p><b>Besaran & Pengukuran:</b> Fokus pada pengukuran besaran panjang/jarak. Memahami cara kerja sensor IR Photoreflector dalam menangkap pantulan cahaya.</p>
+          <p><i>Dokumentasi: LKS Fisika & Foto Praktikum.</i></p>
+        </div>
+        <div class="stem-card">
+          <h3>Technology (T)</h3>
+          <p><b>Artec & Studuino:</b> Penggunaan mikrokontroler Studuino dan software pemrograman blok untuk mengolah data sensor menjadi aksi nyata.</p>
+          <p><i>Dokumentasi: Screenshot Kode & Log Debugging.</i></p>
+        </div>
+        <div class="stem-card">
+          <h3>Engineering (E)</h3>
+          <p><b>Purwarupa Robot:</b> Proses rekayasa mulai dari perencanaan bodi, wiring, hingga testing performa robot di lintasan.</p>
+          <p><i>Dokumentasi: Foto Robot & Video Uji Coba.</i></p>
+        </div>
+        <div class="stem-card">
+          <h3>Mathematics (M)</h3>
+          <p><b>Operasi Hitung:</b> Penerapan logika perbandingan matematika ($Sensor > 7$) dan perhitungan persentase error relatif sensor.</p>
+          <p><i>Dokumentasi: Tabel Data & Rumus Error.</i></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="media" class="card">
+      <h2>C) Media Dokumentasi</h2>
+      <div class="gallery">
+        <figure>
+          <img src="assets/sketsa.jpg" alt="Sketsa Robot">
+          <figcaption>Sketsa Desain Purwarupa</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/flowchart.jpg" alt="Flowchart Program">
+          <figcaption>Alur Logika Program</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/kode.jpg" alt="Kode Studuino">
+          <figcaption>Implementasi Blok Programming</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/robot.jpg" alt="Robot Fisik">
+          <figcaption>Hasil Akhir Robot Smart Tracker</figcaption>
+        </figure>
       </div>
     </section>
 
     <footer class="footer">
-      <p>© 2024 Tim Alpha - Proyek STEM</p>
+      <p>© 2024 Tim Alpha - Proyek STEM Smart Distance Tracker</p>
     </footer>
   </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
