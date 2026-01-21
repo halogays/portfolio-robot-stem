@@ -3,160 +3,74 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio STEM - Robot Line Follower Studuino</title>
+  <title>Portfolio STEM - Smart Distance Tracker</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="header">
     <div class="container">
-      <p class="badge">Portfolio STEM</p>
-      <h1>Robot Line Follower Berbasis Studuino & ArTec</h1>
-      <p class="subtitle">Robot navigasi otomatis menggunakan sensor Photoreflector dan sistem blok Studuino.</p>
+      <p class="badge">Proyek STEM</p>
+      <h1>Smart Distance Tracker</h1>
+      <p class="subtitle">Sistem pendeteksi jarak otomatis berbasis Studuino & Artec Robo dengan fitur Safety Auto-Stop.</p>
 
       <div class="meta">
         <div><span>Tim:</span> Ferdinandus, Leonni, Keyko, Valentino, Christian</div>
-        <div><span>Alat:</span> ArTec Studuino Kit</div>
-        <div><span>Tanggal:</span> 22 Mei 2024</div>
+        <div><span>Platform:</span> Studuino & Artec Robo</div>
+        <div><span>Sensor:</span> IR Photoreflector</div>
       </div>
 
       <nav class="nav">
         <a href="#showcase">Showcase</a>
         <a href="#stem">Pendekatan STEM</a>
+        <a href="#percobaan">Percobaan</a>
         <a href="#media">Media</a>
-        <a href="#refs">Referensi</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
     <section id="showcase" class="card">
-      <h2>Portfolio Showcase</h2>
+      <h2>Isi Portfolio Showcase</h2>
 
       <details open>
         <summary>1) Pengenalan Proyek</summary>
         <div class="content">
           <h3>Latar belakang masalah</h3>
-          <p>Kebutuhan akan alat transportasi logistik otomatis yang bisa bergerak mandiri tanpa navigasi manual untuk meningkatkan efisiensi industri di masa depan.</p>
+          <p>Kebutuhan alat transportasi otomatis yang mampu mengukur jarak mandiri untuk menghindari tabrakan dan memberikan peringatan dini saat ada hambatan.</p>
 
-          <h3>Alat yang dibuat</h3>
+          <h3>Fitur Utama</h3>
           <ul>
-            <li>Studuino Motherboard (Mikrokontroler)</li>
-            <li>ArTec Block Parts (Sasis & Body)</li>
-            <li>IR Photoreflector (Sensor Garis)</li>
+            <li><b>Safety Auto-Stop:</b> Mobil berhenti otomatis jika sensor mendeteksi objek (Nilai > 7).</li>
+            <li><b>Audiovisual Alarm:</b> Buzzer berbunyi dan Lampu LED menyala saat jarak terlalu dekat.</li>
+            <li><b>Smart Tracking:</b> Berjalan normal selama lintasan aman.</li>
           </ul>
 
-          <h3>Fitur / manfaat</h3>
-          <ul>
-            <li>Deteksi jalur hitam otomatis dengan presisi tinggi.</li>
-            <li>Sistem bongkar pasang cepat (Modular) menggunakan ArTec Blocks.</li>
-            <li>Pemrograman visual yang mudah dipahami namun powerful.</li>
-          </ul>
-
-          <h3>Topik STEM terintegrasi</h3>
-          <p>Science • Technology • Engineering • Mathematics</p>
+          <h3>Topik STEM Terintegrasi</h3>
+          <p>Besaran & Pengukuran • Artec Robo • Purwarupa Robot • Operasi Hitung</p>
         </div>
       </details>
 
       <details>
-        <summary>2) Tahap Perencanaan</summary>
+        <summary>2) Desain & Prototyping</summary>
         <div class="content">
-          <h3>Identifikasi masalah</h3>
+          <h3>Arsitektur Sistem (Input–Process–Output)</h3>
           <ul>
-            <li>Bagaimana cara sensor membedakan intensitas pantulan cahaya di lantai putih vs garis hitam?</li>
-            <li>Bagaimana mengatur kecepatan motor agar tidak keluar jalur saat tikungan?</li>
-          </ul>
-
-          <h3>Teori sains yang diterapkan</h3>
-          <ul>
-            <li>Optik: Hukum pemantulan cahaya infra merah.</li>
-            <li>Elektronika dasar: Konversi sinyal analog ke digital.</li>
-          </ul>
-
-          <h3>Alat & bahan</h3>
-          <ul>
-            <li>Main Unit Studuino, Sensor IR, DC Motor, Battery Box, Kabel USB, dan ArTec Blocks.</li>
+            <li><b>Input:</b> IR Photoreflector pada Port A1.</li>
+            <li><b>Process:</b> Studuino (Logika IF-ELSE: Jika Sensor > 7).</li>
+            <li><b>Output:</b> Buzzer (Port A2), LED (Port A0), DC Motor (Port M1).</li>
           </ul>
         </div>
       </details>
 
       <details>
-        <summary>3) Desain & Prototyping</summary>
+        <summary>3) Implementasi & Coding</summary>
         <div class="content">
-          <h3>Sketsa robot</h3>
-          <p>Menggunakan desain 2-wheel drive dengan satu ball caster di depan untuk mobilitas tinggi.</p>
-
-          <h3>Arsitektur sistem (Input–Process–Output)</h3>
+          <h3>Logika Program (Software)</h3>
+          <p>Berdasarkan kode blok Studuino kami:</p>
           <ul>
-            <li><b>Input:</b> IR Photoreflector (Mendeteksi garis).</li>
-            <li><b>Process:</b> Studuino (Mengolah logika percabangan/Loop).</li>
-            <li><b>Output:</b> DC Motor (Menggerakkan roda kanan/kiri).</li>
+            <li><b>Kondisi TRUE:</b> Jika IR Photoreflector A1 > 7, maka Buzzer A2 ON (Freq: 60), LED A0 ON, dan DC Motor M1 STOP (Brake).</li>
+            <li><b>Kondisi FALSE:</b> Jika tidak, Buzzer OFF, LED OFF, DC Motor M1 berjalan dengan Power 100 secara Clockwise.</li>
           </ul>
-        </div>
-      </details>
-
-      <details>
-        <summary>4) Implementasi & Coding</summary>
-        <div class="content">
-          <h3>Tahap perakitan</h3>
-          <ol>
-            <li>Menyusun sasis menggunakan ArTec Blocks.</li>
-            <li>Memasang Studuino dan menghubungkan sensor ke port A0/A1.</li>
-            <li>Menyusun kode program menggunakan aplikasi Studuino (Icon Programming/Block Programming).</li>
-          </ol>
-
-          <h3>Flowchart</h3>
-          <p>Start -> Cek Sensor -> Jika Hitam (Belok) -> Jika Putih (Lurus) -> Repeat.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>5) Testing & Evaluasi</summary>
-        <div class="content">
-          <h3>Skenario pengujian</h3>
-          <ul>
-            <li>Uji lintasan lurus 1 meter.</li>
-            <li>Uji belokan patah 90 derajat.</li>
-            <li>Uji respons sensor terhadap cahaya lampu ruangan.</li>
-          </ul>
-
-          <div class="grid2">
-            <div class="box">
-              <h4>Masalah yang ditemui</h4>
-              <ul>
-                <li>Robot sering keluar jalur karena sensor terlalu sensitif.</li>
-                <li>Roda sering selip di permukaan lantai yang licin.</li>
-              </ul>
-            </div>
-            <div class="box">
-              <h4>Solusi</h4>
-              <ul>
-                <li>Kalibrasi ulang nilai Threshold pada software Studuino.</li>
-                <li>Menambahkan karet pada roda untuk meningkatkan grip.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </details>
-
-      <details>
-        <summary>6) Tim & Refleksi</summary>
-        <div class="content">
-          <h3>Data anggota tim</h3>
-          <ul>
-            <li><b>Ferdinandus</b> — Coding & Web Developer</li>
-            <li><b>Leonni</b> — Web Developer & Logic Design</li>
-            <li><b>Keyko</b> — Assembly & Web Content</li>
-            <li><b>Valentino</b> — Robot Assembly & Hardware</li>
-            <li><b>Christian</b> — Documentation & Web Content</li>
-          </ul>
-
-          <h3>Saran Pengembangan</h3>
-          <ul>
-            <li>Tambah lebih banyak sensor (3-5) agar gerakan lebih smooth.</li>
-            <li>Body lebih rigid, kabel lebih rapi (menggunakan ties).</li>
-          </ul>
-
-          <blockquote>“Prototipe pertama jarang langsung sempurna; data uji yang bikin desain jadi matang.”</blockquote>
         </div>
       </details>
     </section>
@@ -166,60 +80,79 @@
 
       <div class="stem-grid">
         <div class="stem-card">
-          <h3>Science</h3>
+          <h3>Science (S)</h3>
+          <p><b>Besaran dan Pengukuran:</b></p>
           <ul>
-            <li>Penjelasan pantulan cahaya IR pada permukaan hitam (serap) dan putih (pantul).</li>
-            <li>Prinsip kerja Photoreflector dalam menangkap panjang gelombang cahaya.</li>
+            <li>Pengukuran jarak objek menggunakan pantulan sinar Infra Merah.</li>
+            <li>Memahami besaran intensitas cahaya yang dikonversi menjadi angka digital di Studuino.</li>
           </ul>
         </div>
 
         <div class="stem-card">
-          <h3>Technology</h3>
+          <h3>Technology (T)</h3>
+          <p><b>Artec Robo:</b></p>
           <ul>
-            <li>Software: Studuino Programming Environment.</li>
-            <li>Hardware: Sensor ArTec, Motor DC, dan Studuino Board.</li>
-            <li>Debugging menggunakan log data sensor secara real-time.</li>
+            <li>Menggunakan Studuino Motherboard dan aplikasi Studuino Programming Environment.</li>
+            <li>Integrasi sensor IR, Buzzer, dan LED sebagai komponen teknologi cerdas.</li>
           </ul>
         </div>
 
         <div class="stem-card">
-          <h3>Engineering</h3>
+          <h3>Engineering (E)</h3>
+          <p><b>Purwarupa Robot:</b></p>
           <ul>
-            <li>Alur: Perencanaan -> Desain ArTec Blocks -> Prototipe -> Testing.</li>
-            <li>Optimalisasi penempatan sensor agar dekat dengan permukaan lintasan.</li>
+            <li>Perancangan bodi robot menggunakan sasis Artec Blocks (Long Block & Powerbar).</li>
+            <li>Peletakan sensor IR di bagian depan bawah untuk deteksi hambatan yang presisi.</li>
           </ul>
         </div>
 
         <div class="stem-card">
-          <h3>Mathematics</h3>
+          <h3>Mathematics (M)</h3>
+          <p><b>Operasi Hitung:</b></p>
           <ul>
-            <li>Perhitungan <b>Error Relatif</b> IR Photoreflector.</li>
-            <li>$$Error Relatif(\%) = \left| \frac{x_{aktual} - x_{ref}}{x_{ref}} \right| \times 100\%$$</li>
+            <li>Logika Perbandingan: Menggunakan operator matematika "Lebih Besar Dari" ($>$) pada nilai ambang batas 7.</li>
+            <li>Perhitungan Error Relatif saat percobaan untuk validasi akurasi sensor.</li>
           </ul>
         </div>
       </div>
     </section>
 
+    <section id="percobaan" class="card">
+      <h2>Tahap Percobaan</h2>
+      <div class="note">
+        <b>Instruksi Praktikum:</b>
+      </div>
+      <ol>
+        <li>Uji apakah Buzzer dan LED aktif tepat saat objek mendekati sensor.</li>
+        <li>Uji apakah rem (Brake) pada motor M1 berfungsi seketika saat nilai sensor melewati angka 7.</li>
+        <li>Bandingkan nilai sensor di aplikasi Studuino dengan jarak asli (cm) menggunakan penggaris.</li>
+      </ol>
+    </section>
+
     <section id="media" class="card">
-      <h2>Media (Foto/Video/Flowchart)</h2>
+      <h2>Media Dokumentasi</h2>
       <div class="gallery">
         <figure>
-          <img src="assets/robot.jpg" alt="Foto robot" />
-          <figcaption>Robot Line Follower ArTec</figcaption>
+          <img src="assets/sketsa_robot.jpg" alt="Sketsa Robot" />
+          <figcaption>Sketsa Desain Robot (Artec Blocks)</figcaption>
         </figure>
         <figure>
-          <img src="assets/flowchart.png" alt="Flowchart" />
-          <figcaption>Logika Program Studuino</figcaption>
+          <img src="assets/flowchart_robot.jpg" alt="Flowchart" />
+          <figcaption>Flowchart Logika Program</figcaption>
         </figure>
         <figure>
-          <img src="assets/papan_tulis.jpg" alt="Catatan" />
-          <figcaption>Rencana Kerja di Papan Tulis</figcaption>
+          <img src="assets/kode_studuino.jpg" alt="Kode Studuino" />
+          <figcaption>Pemrograman Blok (If Sensor > 7)</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/bentuk_robot.jpg" alt="Bentuk Robot" />
+          <figcaption>Tampilan Fisik Robot Studuino</figcaption>
         </figure>
       </div>
     </section>
 
     <footer class="footer">
-      <p>© Tim Alpha — Portfolio STEM 2024</p>
+      <p>© Tim Alpha — Proyek STEM Smart Distance Tracker</p>
     </footer>
   </main>
 
