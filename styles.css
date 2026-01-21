@@ -136,5 +136,4 @@ blockquote {
   color: var(--text);
 }
 
-
-.footer { color: var(--muted); padding: 12px 0 30px; text-align: center;
+.footer { color: var(--muted); padding: 12px 0 30px; text-align: center; }
