@@ -1,10 +1,15 @@
-// Smooth scroll biar pas presentasi enak
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', (e) => {
-    const id = a.getAttribute('href');
-    const el = document.querySelector(id);
-    if (!el) return;
-    e.preventDefault();
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
+const closeBtn = document.querySelector(".close-modal");
+
+// Klik gambar untuk perbesar
+document.querySelectorAll('.clickable img').forEach(img => {
+  img.onclick = function() {
+    modal.style.display = "flex";
+    modalImg.src = this.src;
+  }
 });
+
+// Tutup modal
+closeBtn.onclick = function() { modal.style.display = "none"; }
+modal.onclick = function(e) { if (e.target !== modalImg) modal.style.display = "none"; }
