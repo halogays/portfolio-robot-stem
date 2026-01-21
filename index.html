@@ -9,171 +9,109 @@
 <body>
   <header class="header">
     <div class="container">
-      <p class="badge">Portfolio Proyek STEM</p>
+      <p class="badge">Laporan Proyek STEM</p>
       <h1>Smart Distance Tracker</h1>
-      <p class="subtitle">Prototipe Sistem Keamanan Kendaraan Otonom dengan Notifikasi Audiovisual Berbasis Studuino.</p>
-
-      <div class="meta">
-        <div><span>Tim:</span> Ferdinandus, Leonni, Keyko, Valentino, Christian</div>
-        <div><span>Kelas:</span> (Isi Kelas Kamu)</div>
-        <div><span>Platform:</span> ArTec & Studuino</div>
-      </div>
-
-      <nav class="nav">
-        <a href="#showcase">Showcase</a>
-        <a href="#stem">Pendekatan STEM</a>
-        <a href="#media">Media</a>
-      </nav>
+      <p class="subtitle">Prototipe Sistem Keamanan Otomatis Berbasis Sensor Jarak menggunakan Studuino & Artec Robo.</p>
     </div>
   </header>
 
   <main class="container">
+    
     <section id="showcase" class="card">
-      <h2>A) Isi Portfolio Showcase</h2>
+      <h2 class="section-title">I. Portfolio Showcase</h2>
+      <hr>
+      <div class="long-content">
+        
+        <h3>1. Pengenalan Proyek</h3>
+        <p>Proyek ini kami rancang untuk meningkatkan aspek keamanan pada sistem transportasi otomatis. Kami membuat sebuah robot yang mampu mendeteksi keberadaan objek di depannya, sehingga jika jarak sudah terlalu dekat, robot akan berhenti secara otomatis untuk menghindari benturan.</p>
+        
+        <h3>2. Tahap Perencanaan</h3>
+        <p>Pada tahap ini, kami mulai menyusun rencana kerja, mengidentifikasi masalah, serta menentukan teori sains yang akan diterapkan. Kami juga menyiapkan komponen perangkat keras seperti Studuino, sensor infra merah, LED, dan buzzer.</p>
 
-      <details open>
-        <summary>1. Pengenalan Proyek</summary>
-        <div class="content">
-          <h3>Alat yang Dibuat</h3>
-          <p>Smart Distance Tracker menggunakan kit ArTec Robo dan Studuino Motherboard.</p>
-          <h3>Fitur / Manfaat Alat</h3>
-          <ul>
-            <li>Mendeteksi jarak objek di depan secara real-time.</li>
-            <li>Memberikan peringatan suara (Buzzer) dan cahaya (LED) saat jarak tidak aman.</li>
-            <li>Sistem pengereman otomatis (Auto-Stop) untuk menghindari benturan fisik.</li>
-          </ul>
-          <h3>Topik STEM Terintegrasi</h3>
-          <p>Fisika (Besaran & Pengukuran), Teknologi (Robotika), Engineering (Desain Purwarupa), dan Matematika (Operasi Hitung & Logika).</p>
-        </div>
-      </details>
+        <h3>3. Desain & Prototyping</h3>
+        <p>Kami merancang bentuk fisik robot (purwarupa) menggunakan Artec Blocks agar struktur robot stabil saat dipasang komponen elektronik. Alur kerja sistem ini menggunakan prinsip Input-Process-Output sebagai dasar operasinya.</p>
 
-      <details>
-        <summary>2. Tahap Perencanaan</summary>
-        <div class="content">
-          <h3>Identifikasi Masalah</h3>
-          <p>Bagaimana menciptakan sistem transportasi yang aman dengan memanfaatkan sensor infra merah untuk meminimalisir kecelakaan akibat kelalaian manusia?</p>
-          <h3>Teori Sains yang Diterapkan</h3>
-          <p>Memanfaatkan prinsip optik pada sensor Photoreflector, di mana sinar infra merah dipancarkan dan dipantulkan kembali oleh objek untuk diukur intensitasnya.</p>
-          <h3>Alat & Bahan</h3>
-          <ul>
-            <li>Studuino Motherboard & Battery Box.</li>
-            <li>2 DC Motors & ArTec Blocks (Bodi Robot).</li>
-            <li>1 IR Photoreflector, 1 Buzzer, 1 Red LED.</li>
-          </ul>
-          <h3>Dokumentasi Perencanaan</h3>
-          <p>Mengacu pada LKS Fisika dan daftar pustaka terkait sensor jarak.</p>
-        </div>
-      </details>
+        <h3>4. Implementasi & Coding</h3>
+        <p>Setelah perakitan mekanik selesai, kami melanjutkan ke tahap pemrograman menggunakan aplikasi Studuino. Di sini kami memasukkan logika agar sensor dapat memberikan perintah otomatis kepada motor driver dan buzzer.</p>
 
-      <details>
-        <summary>3. Desain & Prototyping</summary>
-        <div class="content">
-          <h3>Sketsa Robot</h3>
-          <p>Desain menggunakan roda dua (2WD) dengan sensor diletakkan di bagian depan paling menonjol untuk deteksi dini rintangan.</p>
-          <h3>Arsitektur Sistem (Input–Process–Output)</h3>
-          <ul>
-            <li><b>Input:</b> Nilai intensitas cahaya dari IR Photoreflector.</li>
-            <li><b>Process:</b> Komparasi nilai input dengan ambang batas (Threshold) di Studuino.</li>
-            <li><b>Output:</b> Aktivasi Buzzer, LED, dan perintah stop pada Motor.</li>
-          </ul>
-        </div>
-      </details>
+        <h3>5. Testing & Evaluasi</h3>
+        <p>Kami melakukan pengujian langsung dengan rintangan nyata. Jika ditemukan kendala, seperti sensor yang kurang responsif terhadap jarak tertentu, kami segera melakukan kalibrasi ulang pada kode program agar hasilnya lebih akurat.</p>
 
-      <details>
-        <summary>4. Implementasi & Coding</summary>
-        <div class="content">
-          <h3>Tahap Perakitan</h3>
-          <p>Penyusunan blok Artec dilakukan secara modular, dilanjutkan dengan wiring sensor ke Port A1, LED ke Port A0, dan Buzzer ke Port A2.</p>
-          <h3>Alur Program & Flowchart</h3>
-          <p>Program berjalan dalam loop (forever). Sensor terus membaca jarak. Jika nilai > 7, sistem masuk ke mode waspada (Alarm ON & Stop).</p>
-          <h3>Dokumentasi</h3>
-          <p>Tersedia foto rangkaian kabel dan log debugging dari aplikasi Studuino.</p>
-        </div>
-      </details>
+        <h3>6. Tim & Refleksi</h3>
+        <p>Proyek ini dikerjakan oleh tim yang terdiri dari: <b>Ferdinandus, Leonni, Keyko, Valentino, dan Christian</b>. Kami menyimpulkan bahwa ketelitian dalam perakitan kabel dan penyusunan logika program sangat menentukan keberhasilan fungsi otomatisasi pada robot ini.</p>
+        
+        <figure class="main-photo">
+          <img src="assets/foto_kelompok.jpg" alt="Foto Tim Smart Distance Tracker">
+          <figcaption>Foto bersama seluruh anggota tim setelah menyelesaikan purwarupa robot.</figcaption>
+        </figure>
 
-      <details>
-        <summary>5. Testing & Evaluasi</summary>
-        <div class="content">
-          <h3>Skenario Pengujian</h3>
-          <ul>
-            <li>Pengujian deteksi objek pada berbagai jarak (dekat, sedang, jauh).</li>
-            <li>Pengujian kecepatan respon rem motor saat buzzer aktif.</li>
-          </ul>
-          <h3>Perhitungan Error Relatif</h3>
-          <p>Dilakukan kalibrasi nilai sensor terhadap jarak nyata untuk mendapatkan akurasi optimal.</p>
-          <h3>Masalah & Solusi</h3>
-          <p><b>Masalah:</b> Sensor kadang terganggu cahaya ruangan. <b>Solusi:</b> Menyesuaikan nilai Threshold pada kode program.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>6. Tim & Refleksi</summary>
-        <div class="content">
-          <h3>Data Anggota Tim</h3>
-          <ul>
-            <li><b>Ferdinandus</b> — Coding & Web Development</li>
-            <li><b>Leonni</b> — Web Logic & Algorithm</li>
-            <li><b>Keyko</b> — Hardware Assembly</li>
-            <li><b>Valentino</b> — Mechanical Design</li>
-            <li><b>Christian</b> — Documentation & Testing</li>
-          </ul>
-          <h3>Refleksi & Saran</h3>
-          <p>Tantangan utama adalah menyelaraskan deteksi sensor dengan pengereman motor. Saran: Penambahan sensor ultrasonik untuk jangkauan yang lebih luas.</p>
-          <blockquote>"Prototipe pertama jarang langsung sempurna; data uji yang bikin desain jadi matang."</blockquote>
-        </div>
-      </details>
-    </section>
-
-    <section id="stem" class="card">
-      <h2>B) Pendekatan STEM</h2>
-      <div class="stem-grid">
-        <div class="stem-card">
-          <h3>Science (S)</h3>
-          <p><b>Besaran & Pengukuran:</b> Fokus pada pengukuran besaran panjang/jarak. Memahami cara kerja sensor IR Photoreflector dalam menangkap pantulan cahaya.</p>
-          <p><i>Dokumentasi: LKS Fisika & Foto Praktikum.</i></p>
-        </div>
-        <div class="stem-card">
-          <h3>Technology (T)</h3>
-          <p><b>Artec & Studuino:</b> Penggunaan mikrokontroler Studuino dan software pemrograman blok untuk mengolah data sensor menjadi aksi nyata.</p>
-          <p><i>Dokumentasi: Screenshot Kode & Log Debugging.</i></p>
-        </div>
-        <div class="stem-card">
-          <h3>Engineering (E)</h3>
-          <p><b>Purwarupa Robot:</b> Proses rekayasa mulai dari perencanaan bodi, wiring, hingga testing performa robot di lintasan.</p>
-          <p><i>Dokumentasi: Foto Robot & Video Uji Coba.</i></p>
-        </div>
-        <div class="stem-card">
-          <h3>Mathematics (M)</h3>
-          <p><b>Operasi Hitung:</b> Penerapan logika perbandingan matematika ($Sensor > 7$) dan perhitungan persentase error relatif sensor.</p>
-          <p><i>Dokumentasi: Tabel Data & Rumus Error.</i></p>
-        </div>
+        <blockquote>"Prototipe pertama jarang langsung sempurna, hasil data uji yang membuat desain menjadi matang."</blockquote>
       </div>
     </section>
 
-    <section id="media" class="card">
-      <h2>C) Media Dokumentasi</h2>
-      <div class="gallery">
-        <figure>
+    <section id="stem" class="card">
+      <h2 class="section-title">II. Pendekatan STEM</h2>
+      <hr>
+
+      <div class="stem-long-item">
+        <h3>1. Science (Besaran & Pengukuran)</h3>
+        <p>Dalam aspek sains, kami mempelajari cara mengukur jarak objek menggunakan sensor cahaya infra merah. Kami juga menerapkan teori ketidakpastian pengukuran untuk memastikan data yang diambil lebih valid.</p>
+        <p><b>Rumus ketidakpastian:</b> $\Delta x = \frac{1}{2} \times \text{Skala Terkecil}$</p>
+        
+        <figure class="main-photo">
+          <img src="assets/catatan_fisika.jpg" alt="Catatan Rumus Fisika">
+          <figcaption>Catatan analisis kesalahan pengukuran dan rumus ketidakpastian.</figcaption>
+        </figure>
+      </div>
+
+      <div class="stem-long-item">
+        <h3>2. Technology (ArTec Robo & Studuino)</h3>
+        <p>Kami menggunakan platform ArTec Robo dan mikrokontroler Studuino. Komponen utama yang digunakan mencakup sensor IR Photoreflector untuk deteksi objek, LED serta Buzzer sebagai indikator bahaya, dan DC Motor sebagai aktuator.</p>
+        
+        
+        <figure class="main-photo">
+          <img src="assets/flowchart.jpg" alt="Flowchart Robot">
+          <figcaption>Alur logika program: Jika sensor mendeteksi nilai > 7, maka alarm aktif dan robot berhenti.</figcaption>
+        </figure>
+      </div>
+
+      <div class="stem-long-item">
+        <h3>3. Engineering (Purwarupa Robot)</h3>
+        <p>Proses perancangan bodi robot menggunakan Artec Blocks dilakukan secara bertahap, mulai dari pembuatan struktur bawah hingga penempatan sensor di posisi depan agar deteksi hambatan lebih maksimal.</p>
+        
+        <figure class="main-photo">
           <img src="assets/sketsa.jpg" alt="Sketsa Robot">
-          <figcaption>Sketsa Desain Purwarupa</figcaption>
+          <figcaption>Sketsa teknis desain robot sebelum memasuki tahap perakitan.</figcaption>
         </figure>
-        <figure>
-          <img src="assets/flowchart.jpg" alt="Flowchart Program">
-          <figcaption>Alur Logika Program</figcaption>
+
+        <figure class="main-photo">
+          <img src="assets/robot_asli.jpg" alt="Hasil Jadi Robot">
+          <figcaption>Bentuk fisik purwarupa Smart Distance Tracker yang telah selesai dirakit.</figcaption>
         </figure>
-        <figure>
-          <img src="assets/kode.jpg" alt="Kode Studuino">
-          <figcaption>Implementasi Blok Programming</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/robot.jpg" alt="Robot Fisik">
-          <figcaption>Hasil Akhir Robot Smart Tracker</figcaption>
-        </figure>
+      </div>
+
+      <div class="stem-long-item">
+        <h3>4. Mathematics (Operasi Hitung)</h3>
+        <p>Aspek matematika digunakan dalam penyusunan logika perbandingan pada kode program (<i>if-else</i>) serta penghitungan <b>Error Relatif</b> untuk mengetahui tingkat ketelitian sensor.</p>
+        <p><b>Rumus Error Relatif:</b> $I = \frac{\Delta x}{x} \times 100\%$</p>
+      </div>
+
+      <div class="stem-long-item">
+        <h3>5. Anggota Tim & Peran</h3>
+        <p>Berikut adalah pembagian tugas dalam pengerjaan proyek ini agar berjalan dengan efektif:</p>
+        <ul>
+          <li><b>Ferdinandus:</b> Bertanggung jawab dalam pemrograman (coding), alur flowchart, dan pembuatan website.</li>
+          <li><b>Leonni:</b> Bertanggung jawab dalam pembuatan website dan pemrograman.</li>
+          <li><b>Keyko:</b> Bertanggung jawab dalam perakitan bodi robot, pembuatan website, dan alur flowchart .</li>
+          <li><b>Valentino:</b> Bertanggung jawab dalam perakitan bodi robot dan pembuatan website .</li>
+          <li><b>Christian:</b> Bertanggung jawab dalam dokumentasi serta pengisian konten website.</li>
+        </ul>
       </div>
     </section>
 
     <footer class="footer">
-      <p>© 2024 Tim Alpha - Proyek STEM Smart Distance Tracker</p>
+      <p>"Kegagalan hanyalah kesempatan untuk memulai lagi dengan lebih cerdas."</p>
+      <p>© 2026 Tim 10.3 kel 6 - Proyek STEM Smart Distance Tracker</p>
     </footer>
   </main>
 
