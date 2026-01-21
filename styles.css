@@ -137,3 +137,29 @@ blockquote {
 }
 
 .footer { color: var(--muted); padding: 12px 0 30px; text-align: center; }
+
+/* ===== LIGHTBOX ===== */
+.lightbox{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  cursor: zoom-out;
+  padding: 20px;
+}
+
+.lightbox img{
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  border: 2px solid var(--line);
+  object-fit: contain;
+  box-shadow: 0 10px 40px rgba(0,0,0,.5);
+}
+
+.lightbox.show{
+  display: flex;
+}
