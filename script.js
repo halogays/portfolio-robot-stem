@@ -7,5 +7,4 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     e.preventDefault();
     el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
-
 });
