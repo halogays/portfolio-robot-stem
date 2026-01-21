@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio STEM - Robot Line Follower</title>
+  <title>Portfolio STEM - Robot Line Follower Studuino</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="header">
     <div class="container">
       <p class="badge">Portfolio STEM</p>
-      <h1>Smart Distance Tracker</h1>
-      <p class="subtitle">Robot mengikuti jalur menggunakan sensor photoreflector/IR dan kontrol motor via mikrokontroler.</p>
+      <h1>Robot Line Follower Berbasis Studuino & ArTec</h1>
+      <p class="subtitle">Robot navigasi otomatis menggunakan sensor Photoreflector dan sistem blok Studuino.</p>
 
       <div class="meta">
-        <div><span>Tim:</span> (kelompok 5)</div>
-        <div><span>Kelas:</span> (10.3)</div>
-        <div><span>Tanggal:</span> (21-01-2026 sampai 22-01-2026)</div>
+        <div><span>Tim:</span> Ferdinandus, Leonni, Keyko, Valentino, Christian</div>
+        <div><span>Alat:</span> ArTec Studuino Kit</div>
+        <div><span>Tanggal:</span> 22 Mei 2024</div>
       </div>
 
       <nav class="nav">
@@ -29,28 +29,27 @@
   </header>
 
   <main class="container">
-    <!-- Showcase -->
     <section id="showcase" class="card">
-      <h2>Isi Portfolio Showcase</h2>
+      <h2>Portfolio Showcase</h2>
 
       <details open>
         <summary>1) Pengenalan Proyek</summary>
         <div class="content">
           <h3>Latar belakang masalah</h3>
-          <p>(Tulis masalah yang mau diselesaikan)</p>
+          <p>Kebutuhan akan alat transportasi logistik otomatis yang bisa bergerak mandiri tanpa navigasi manual untuk meningkatkan efisiensi industri di masa depan.</p>
 
           <h3>Alat yang dibuat</h3>
           <ul>
-            <li>(Komponen utama 1)</li>
-            <li>(Komponen utama 2)</li>
-            <li>(Komponen utama 3)</li>
+            <li>Studuino Motherboard (Mikrokontroler)</li>
+            <li>ArTec Block Parts (Sasis & Body)</li>
+            <li>IR Photoreflector (Sensor Garis)</li>
           </ul>
 
           <h3>Fitur / manfaat</h3>
           <ul>
-            <li>(Fitur 1)</li>
-            <li>(Fitur 2)</li>
-            <li>(Fitur 3)</li>
+            <li>Deteksi jalur hitam otomatis dengan presisi tinggi.</li>
+            <li>Sistem bongkar pasang cepat (Modular) menggunakan ArTec Blocks.</li>
+            <li>Pemrograman visual yang mudah dipahami namun powerful.</li>
           </ul>
 
           <h3>Topik STEM terintegrasi</h3>
@@ -63,23 +62,20 @@
         <div class="content">
           <h3>Identifikasi masalah</h3>
           <ul>
-            <li>(Masalah 1)</li>
-            <li>(Masalah 2)</li>
+            <li>Bagaimana cara sensor membedakan intensitas pantulan cahaya di lantai putih vs garis hitam?</li>
+            <li>Bagaimana mengatur kecepatan motor agar tidak keluar jalur saat tikungan?</li>
           </ul>
 
           <h3>Teori sains yang diterapkan</h3>
           <ul>
-            <li>(Teori 1)</li>
-            <li>(Teori 2)</li>
+            <li>Optik: Hukum pemantulan cahaya infra merah.</li>
+            <li>Elektronika dasar: Konversi sinyal analog ke digital.</li>
           </ul>
 
           <h3>Alat & bahan</h3>
           <ul>
-            <li>(Daftar komponen)</li>
+            <li>Main Unit Studuino, Sensor IR, DC Motor, Battery Box, Kabel USB, dan ArTec Blocks.</li>
           </ul>
-
-          <h3>Dokumentasi</h3>
-          <p>Link/Foto LKS, daftar pustaka singkat.</p>
         </div>
       </details>
 
@@ -87,17 +83,14 @@
         <summary>3) Desain & Prototyping</summary>
         <div class="content">
           <h3>Sketsa robot</h3>
-          <p>Tambahkan gambar sketsa di bagian Media.</p>
+          <p>Menggunakan desain 2-wheel drive dengan satu ball caster di depan untuk mobilitas tinggi.</p>
 
           <h3>Arsitektur sistem (Input–Process–Output)</h3>
           <ul>
-            <li><b>Input:</b> (sensor)</li>
-            <li><b>Process:</b> (logika kontrol)</li>
-            <li><b>Output:</b> (motor/aktuator)</li>
+            <li><b>Input:</b> IR Photoreflector (Mendeteksi garis).</li>
+            <li><b>Process:</b> Studuino (Mengolah logika percabangan/Loop).</li>
+            <li><b>Output:</b> DC Motor (Menggerakkan roda kanan/kiri).</li>
           </ul>
-
-          <h3>Dokumentasi</h3>
-          <p>Foto/video saat prototyping.</p>
         </div>
       </details>
 
@@ -106,16 +99,13 @@
         <div class="content">
           <h3>Tahap perakitan</h3>
           <ol>
-            <li>(Langkah 1)</li>
-            <li>(Langkah 2)</li>
-            <li>(Langkah 3)</li>
+            <li>Menyusun sasis menggunakan ArTec Blocks.</li>
+            <li>Memasang Studuino dan menghubungkan sensor ke port A0/A1.</li>
+            <li>Menyusun kode program menggunakan aplikasi Studuino (Icon Programming/Block Programming).</li>
           </ol>
 
           <h3>Flowchart</h3>
-          <p>Upload gambar flowchart, lalu taruh di Media.</p>
-
-          <h3>Dokumentasi</h3>
-          <p>Foto robot + screenshot kode + log debugging.</p>
+          <p>Start -> Cek Sensor -> Jika Hitam (Belok) -> Jika Putih (Lurus) -> Repeat.</p>
         </div>
       </details>
 
@@ -124,29 +114,24 @@
         <div class="content">
           <h3>Skenario pengujian</h3>
           <ul>
-            <li>(Uji lurus)</li>
-            <li>(Uji tikungan)</li>
-            <li>(Uji cahaya berbeda)</li>
+            <li>Uji lintasan lurus 1 meter.</li>
+            <li>Uji belokan patah 90 derajat.</li>
+            <li>Uji respons sensor terhadap cahaya lampu ruangan.</li>
           </ul>
-
-          <h3>Perhitungan error relatif IR</h3>
-          <p>
-            Error Relatif(%) = |(x<sub>aktual</sub> − x<sub>referensi</sub>) / x<sub>referensi</sub>| × 100%
-          </p>
 
           <div class="grid2">
             <div class="box">
               <h4>Masalah yang ditemui</h4>
               <ul>
-                <li>(Masalah 1)</li>
-                <li>(Masalah 2)</li>
+                <li>Robot sering keluar jalur karena sensor terlalu sensitif.</li>
+                <li>Roda sering selip di permukaan lantai yang licin.</li>
               </ul>
             </div>
             <div class="box">
               <h4>Solusi</h4>
               <ul>
-                <li>(Solusi 1)</li>
-                <li>(Solusi 2)</li>
+                <li>Kalibrasi ulang nilai Threshold pada software Studuino.</li>
+                <li>Menambahkan karet pada roda untuk meningkatkan grip.</li>
               </ul>
             </div>
           </div>
@@ -158,22 +143,24 @@
         <div class="content">
           <h3>Data anggota tim</h3>
           <ul>
-  <li><b>Ferdinandus</b> — Peran (Coding dan Membuat Web)</li>
-  <li><b>Leonni</b> — Peran (Membuat Web dan Coding)</li>
-  <li><b>Keyko</b> — Peran (Perakitan Robot dan Membuat Web)</li>
-  <li><b>Valentino</b> — Peran (Perakitan Robot dan Membuat Web)</li>
-  <li><b>Christian</b> — Peran (Dokumentasi dan Membuat Web)</li>
-</ul>
+            <li><b>Ferdinandus</b> — Coding & Web Developer</li>
+            <li><b>Leonni</b> — Web Developer & Logic Design</li>
+            <li><b>Keyko</b> — Assembly & Web Content</li>
+            <li><b>Valentino</b> — Robot Assembly & Hardware</li>
+            <li><b>Christian</b> — Documentation & Web Content</li>
+          </ul>
 
-          <h3>Refleksi, tantangan, & saran pengembangan</h3>
-          <p>(Tulis refleksi singkat + improvement next)</p>
+          <h3>Saran Pengembangan</h3>
+          <ul>
+            <li>Tambah lebih banyak sensor (3-5) agar gerakan lebih smooth.</li>
+            <li>Body lebih rigid, kabel lebih rapi (menggunakan ties).</li>
+          </ul>
 
-          <blockquote>“(Quote penutup kamu)”</blockquote>
+          <blockquote>“Prototipe pertama jarang langsung sempurna; data uji yang bikin desain jadi matang.”</blockquote>
         </div>
       </details>
     </section>
 
-    <!-- STEM -->
     <section id="stem" class="card">
       <h2>Pendekatan STEM</h2>
 
@@ -181,87 +168,61 @@
         <div class="stem-card">
           <h3>Science</h3>
           <ul>
-            <li>Penjelasan topik sains yang diterapkan: (contoh: pantulan cahaya IR pada hitam/putih)</li>
-            <li>Rumus/konsep: (contoh: intensitas pantulan, ambang threshold)</li>
-            <li>Dokumentasi: LKS/foto praktik fisika</li>
+            <li>Penjelasan pantulan cahaya IR pada permukaan hitam (serap) dan putih (pantul).</li>
+            <li>Prinsip kerja Photoreflector dalam menangkap panjang gelombang cahaya.</li>
           </ul>
         </div>
 
         <div class="stem-card">
           <h3>Technology</h3>
           <ul>
-            <li>Pengenalan software/hardware: (Arduino/ESP32, driver motor, sensor IR)</li>
-            <li>Komponen yang digunakan</li>
-            <li>Alur program & flowchart</li>
-            <li>Dokumentasi: screenshot kode, log debugging</li>
+            <li>Software: Studuino Programming Environment.</li>
+            <li>Hardware: Sensor ArTec, Motor DC, dan Studuino Board.</li>
+            <li>Debugging menggunakan log data sensor secara real-time.</li>
           </ul>
         </div>
 
         <div class="stem-card">
           <h3>Engineering</h3>
           <ul>
-            <li>Alur proses: perencanaan → desain → prototipe → testing</li>
-            <li>Pertimbangan desain rangka & wiring</li>
-            <li>Dokumentasi: foto rangkaian, video uji robot</li>
+            <li>Alur: Perencanaan -> Desain ArTec Blocks -> Prototipe -> Testing.</li>
+            <li>Optimalisasi penempatan sensor agar dekat dengan permukaan lintasan.</li>
           </ul>
         </div>
 
         <div class="stem-card">
           <h3>Mathematics</h3>
           <ul>
-            <li>Error relatif (rumus & teori)</li>
-            <li>Contoh perhitungan error relatif IR</li>
-            <li>Dokumentasi: tabel data uji + foto/video praktik</li>
+            <li>Perhitungan <b>Error Relatif</b> IR Photoreflector.</li>
+            <li>$$Error Relatif(\%) = \left| \frac{x_{aktual} - x_{ref}}{x_{ref}} \right| \times 100\%$$</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Media -->
     <section id="media" class="card">
-      <h2>Media (Foto/Video/Flowchart/Kode)</h2>
-      <p>Masukin file di folder <code>assets/</code>, lalu panggil di sini.</p>
-
+      <h2>Media (Foto/Video/Flowchart)</h2>
       <div class="gallery">
         <figure>
           <img src="assets/robot.jpg" alt="Foto robot" />
-          <figcaption>Foto robot final</figcaption>
+          <figcaption>Robot Line Follower ArTec</figcaption>
         </figure>
-
         <figure>
-          <img src="assets/flowchart.png" alt="Flowchart program" />
-          <figcaption>Flowchart program</figcaption>
+          <img src="assets/flowchart.png" alt="Flowchart" />
+          <figcaption>Logika Program Studuino</figcaption>
         </figure>
-
         <figure>
-          <img src="assets/sketsa.jpg" alt="Sketsa awal" />
-          <figcaption>Sketsa awal desain</figcaption>
+          <img src="assets/papan_tulis.jpg" alt="Catatan" />
+          <figcaption>Rencana Kerja di Papan Tulis</figcaption>
         </figure>
       </div>
-
-      <div class="note">
-        <b>Tips:</b> kalau videonya besar, upload ke YouTube/Drive lalu taruh linknya.
-      </div>
-    </section>
-
-    <!-- Referensi -->
-    <section id="refs" class="card">
-      <h2>Referensi</h2>
-      <ul>
-        <li>Datasheet sensor (nama sensor kamu)</li>
-        <li>Tutorial line follower (link)</li>
-        <li>Dokumentasi Arduino/ESP32 (link)</li>
-      </ul>
     </section>
 
     <footer class="footer">
-      <p>© (Nama tim) — Portfolio STEM</p>
+      <p>© Tim Alpha — Portfolio STEM 2024</p>
     </footer>
   </main>
 
   <script src="script.js"></script>
 </body>
-
-</html
-
-
+</html>
