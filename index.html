@@ -25,9 +25,7 @@
 
   <main class="container">
 
-    <!-- =======================================================
-         I. PORTFOLIO SHOWCASE
-    ======================================================= -->
+    <!-- ===================== I. SHOWCASE ===================== -->
     <section id="showcase" class="card">
       <h2 class="section-title">I. Portfolio Showcase</h2>
       <hr>
@@ -110,6 +108,279 @@
       </div>
     </section>
 
+    <!-- ===================== II. STEM ===================== -->
+    <section id="stem" class="card">
+      <h2 class="section-title">II. Pendekatan STEM</h2>
+      <hr>
+
+      <div class="stem-long-item">
+        <h3>0. Pengenalan Proyek (STEM)</h3>
+        <ul>
+          <li><b>Science:</b> Besaran, pengukuran, ketidakpastian.</li>
+          <li><b>Technology:</b> Studuino, ArTec Robo.</li>
+          <li><b>Engineering:</b> desain awal → prototipe → pengujian.</li>
+          <li><b>Mathematics:</b> rata-rata, Δx, error relatif.</li>
+        </ul>
+      </div>
+
+      <div class="stem-long-item">
+        <h3>1. Science (Fisika: Besaran & Pengukuran)</h3>
+
+        <h4>Penyebab kesalahan pengukuran</h4>
+        <ul>
+          <li>Kesalahan alat.</li>
+          <li>Kesalahan manusia.</li>
+          <li>Kondisi percobaan (cahaya/getaran).</li>
+          <li>Teknik pengukuran kurang sempurna.</li>
+        </ul>
+
+        <h4>Data pengukuran berulang</h4>
+        <p>3.0, 2.8, 2.6, 3.0, 2.8</p>
+
+        <ul>
+          <li>Rata-rata = 2.84 cm</li>
+          <li>Δx ≈ 0.0748 cm</li>
+          <li>Error relatif ≈ 2.63%</li>
+        </ul>
+
+        <div class="grid2">
+          <figure class="main-photo">
+            <img src="assets/lks.jpg" alt="LKS">
+            <figcaption>LKS: perhitungan ketidakpastian.</figcaption>
+          </figure>
+
+          <figure class="main-photo">
+            <img src="assets/praktik_ukur.jpg" alt="Praktik Ukur">
+            <figcaption>Praktik mengukur jarak dengan mistar.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="stem-long-item">
+        <h3>2. Technology (Studuino & ArTec Robo)</h3>
+
+        <h4>A. Pengenalan Studuino</h4>
+        <p>
+          <b>Studuino</b> adalah mikrokontroler pendidikan yang memudahkan perakitan dan pemrograman robot.
+          Studuino punya port input (misalnya A0–A5) untuk sensor, dan port motor (misalnya M1–M2) untuk mengendalikan motor.
+          Pemrograman dilakukan lewat aplikasi <b>Studuino</b> dengan block coding.
+        </p>
+
+        <ul>
+          <li><b>Peran Studuino di proyek ini:</b>
+            <ul>
+              <li>Membaca IR Photoreflector (A1).</li>
+              <li>Menjalankan logika if–else.</li>
+              <li>Mengendalikan LED (A0), buzzer (A2), motor (M1).</li>
+            </ul>
+          </li>
+          <li><b>Alasan memakai Studuino:</b> mudah diprogram, cocok untuk pembelajaran robotika, dan kompatibel dengan ArTec.</li>
+        </ul>
+
+        <h4>B. Pengenalan ArTec Robo / ArTec Blocks</h4>
+        <p>
+          <b>ArTec Robo</b> adalah kit robotika yang memakai <b>ArTec Blocks</b> sebagai rangka robot.
+          Blocks ini modular (bisa bongkar pasang), jadi desain bisa cepat diubah ketika evaluasi.
+          ArTec membantu membuat rangka stabil dan posisi sensor lebih presisi.
+        </p>
+
+        <ul>
+          <li>Mudah dirakit dan dimodifikasi.</li>
+          <li>Struktur stabil.</li>
+          <li>Posisi sensor dapat diatur (tinggi/sudut).</li>
+        </ul>
+
+        <h4>C. Komponen</h4>
+        <ul>
+          <li>IR Photoreflector – A1</li>
+          <li>LED – A0</li>
+          <li>Buzzer – A2</li>
+          <li>Motor – M1</li>
+          <li>Baterai</li>
+        </ul>
+
+        <h4>D. Cara Kerja</h4>
+        <ul>
+          <li>Sensor &gt; 7 → alarm ON & motor STOP</li>
+          <li>Sensor ≤ 7 → motor jalan</li>
+        </ul>
+
+        <figure class="main-photo">
+          <img src="assets/kode.jpg" alt="Kode Studuino">
+          <figcaption>Screenshot coding Studuino.</figcaption>
+        </figure>
+
+        <figure class="main-photo">
+          <img src="assets/log.jpg" alt="Log Debugging">
+          <figcaption>Log debugging: catatan perbaikan program.</figcaption>
+        </figure>
+
+        <figure class="main-photo">
+          <img src="assets/flowchart.jpg" alt="Flowchart">
+          <figcaption>Flowchart sistem.</figcaption>
+        </figure>
+      </div>
+
+      <div class="stem-long-item">
+        <h3>3. Engineering (Perencanaan → Desain → Prototipe → Pengujian)</h3>
+
+        <h4>A. Perencanaan</h4>
+        <ul>
+          <li>Sensor ditempatkan di depan menghadap lurus.</li>
+          <li>Motor di bawah sebagai penggerak utama.</li>
+          <li>Wiring dibuat rapi dan aman.</li>
+          <li>Rangka memakai ArTec Blocks.</li>
+        </ul>
+
+        <h4>B. Desain Awal</h4>
+        <figure class="main-photo">
+          <img src="assets/sketsa.jpg" alt="Sketsa">
+          <figcaption>Sketsa awal perencanaan robot.</figcaption>
+        </figure>
+
+        <h4>C. Prototipe</h4>
+        <figure class="main-photo">
+          <img src="assets/robot.jpg" alt="Robot">
+          <figcaption>Prototipe final Smart Distance Tracker.</figcaption>
+        </figure>
+
+        <h4>D. Pengujian Prototipe</h4>
+        <p>Berikut hasil tes robot setelah dirakit:</p>
+
+        <div class="note">
+          <b>Video Hasil Uji:</b><br>
+          <a href="https://youtu.be/0XWDEHIWLls?si=htdQVasCmSPMHdn_" target="_blank" rel="noopener">
+            https://youtu.be/0XWDEHIWLls?si=htdQVasCmSPMHdn_
+          </a>
+        </div>
+
+        <p>
+          Robot berhasil berhenti otomatis saat objek mendekat. Pada cahaya sangat terang sensor sedikit kurang stabil,
+          jadi threshold dan posisi sensor perlu dikalibrasi ulang.
+        </p>
+      </div>
+
+      <!-- ===== MATHEMATICS (FINAL LENGKAP) ===== -->
+      <div class="stem-long-item">
+        <h3>4. Mathematics (Langkah Hitung Rata-rata, Ketidakpastian, dan Error Relatif)</h3>
+
+        <p>
+          Di bagian matematika, kami mengolah data pengukuran berulang supaya hasilnya tidak cuma “kira-kira”.
+          Jadi kami hitung <b>rata-rata</b>, lalu hitung <b>ketidakpastian pengukuran berulang</b> ($\Delta x$),
+          dan terakhir hitung <b>error/ketidakpastian relatif</b> dalam persen.
+        </p>
+
+        <h4>A. Data yang dipakai</h4>
+        <p>Data pengukuran berulang (cm): <b>3.0, 2.8, 2.6, 3.0, 2.8</b></p>
+
+        <table class="data">
+          <thead>
+            <tr><th>Pengukuran</th><th>Nilai (cm)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>3.0</td></tr>
+            <tr><td>2</td><td>2.8</td></tr>
+            <tr><td>3</td><td>2.6</td></tr>
+            <tr><td>4</td><td>3.0</td></tr>
+            <tr><td>5</td><td>2.8</td></tr>
+          </tbody>
+        </table>
+
+        <h4>B. Langkah 1 — Hitung rata-rata ($\bar{x}$)</h4>
+        <p>
+          Rumus rata-rata:
+          <br>
+          $\bar{x}=\frac{\sum x}{N}$
+        </p>
+        <ul>
+          <li>Jumlah data ($N$) = 5</li>
+          <li>$\sum x = 3.0+2.8+2.6+3.0+2.8 = 14.2$</li>
+          <li>$\bar{x} = \frac{14.2}{5} = 2.84\ \text{cm}$</li>
+        </ul>
+
+        <h4>C. Langkah 2 — Hitung $\sum x^2$ (dibutuhkan untuk rumus $\Delta x$)</h4>
+        <p>Kita kuadratkan tiap data lalu dijumlahkan:</p>
+        <ul>
+          <li>$3.0^2=9.00$</li>
+          <li>$2.8^2=7.84$</li>
+          <li>$2.6^2=6.76$</li>
+          <li>$3.0^2=9.00$</li>
+          <li>$2.8^2=7.84$</li>
+          <li>Jadi $\sum x^2 = 9.00+7.84+6.76+9.00+7.84 = 40.44$</li>
+        </ul>
+
+        <h4>D. Langkah 3 — Hitung ketidakpastian pengukuran berulang ($\Delta x$)</h4>
+        <p>
+          Rumus ketidakpastian pengukuran berulang (sesuai LKS):
+          <br>
+          $\Delta x=\frac{1}{N}\sqrt{\frac{N\sum x^2-(\sum x)^2}{N-1}}$
+        </p>
+
+        <p>Substitusi angka:</p>
+        <ul>
+          <li>$N\sum x^2 = 5 \times 40.44 = 202.2$</li>
+          <li>$(\sum x)^2 = (14.2)^2 = 201.64$</li>
+          <li>$N\sum x^2-(\sum x)^2 = 202.2 - 201.64 = 0.56$</li>
+          <li>$\frac{0.56}{N-1} = \frac{0.56}{4} = 0.14$</li>
+          <li>$\sqrt{0.14} \approx 0.374$</li>
+          <li>$\Delta x = \frac{1}{5}\times 0.374 \approx 0.0748\ \text{cm}$</li>
+        </ul>
+
+        <h4>E. Langkah 4 — Hitung error/ketidakpastian relatif (%)</h4>
+        <p>
+          Rumus ketidakpastian relatif:
+          <br>
+          $\text{Relatif}(\%)=\frac{\Delta x}{\bar{x}}\times 100\%$
+        </p>
+
+        <ul>
+          <li>$\frac{\Delta x}{\bar{x}} = \frac{0.0748}{2.84} \approx 0.0263$</li>
+          <li>Relatif $\approx 0.0263 \times 100\% = 2.63\%$</li>
+        </ul>
+
+        <h4>Kesimpulan (dari hitungan)</h4>
+        <ul>
+          <li><b>Rata-rata</b> = <b>2.84 cm</b></li>
+          <li><b>Ketidakpastian</b> = <b>0.0748 cm</b></li>
+          <li><b>Ketidakpastian/error relatif</b> = <b>2.63%</b></li>
+        </ul>
+      </div>
+
+      <div class="stem-long-item">
+        <h3>5. Tim & Refleksi</h3>
+        <ul>
+          <li>Ferdinandus – Coding & Website</li>
+          <li>Leonni – Website & logika kode</li>
+          <li>Keyko – Perakitan</li>
+          <li>Valentino – Hardware</li>
+          <li>Christian – Dokumentasi</li>
+        </ul>
+
+        <h4>Refleksi</h4>
+        <ul>
+          <li>Sensor perlu kalibrasi agar stabil.</li>
+          <li>Wiring rapi membuat pembacaan lebih konsisten.</li>
+          <li>Debugging membantu menyempurnakan logika.</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <footer class="footer">
+      <p>"Kegagalan hanyalah kesempatan untuk memulai lagi dengan lebih cerdas."</p>
+      <p>© 2024 Tim Alpha - Smart Distance Tracker</p>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+  </html>
     <!-- =======================================================
          II. STEM
     ======================================================= -->
@@ -321,3 +592,4 @@
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 </html>
+
