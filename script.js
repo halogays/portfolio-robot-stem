@@ -2,14 +2,14 @@
    1) Smooth Scroll dengan Offset Header
    ============================================================ */
 const header = document.querySelector(".header");
-const navLinks = document.querySelectorAll('a[href^="#"]');
+const navLinks = document.querySelectorAll('.nav a[href^="#"]');
 
 function smoothScrollWithOffset(target) {
   const el = document.querySelector(target);
   if (!el) return;
 
   const headerH = header ? header.offsetHeight : 0;
-  const y = el.getBoundingClientRect().top + window.scrollY - headerH - 10;
+  const y = el.getBoundingClientRect().top + window.scrollY - headerH - 12;
 
   window.scrollTo({ top: y, behavior: "smooth" });
 }
@@ -26,9 +26,9 @@ navLinks.forEach(link => {
 });
 
 /* ============================================================
-   2) Highlight Nav Aktif Saat Scroll (aman)
+   2) Highlight Nav Aktif Saat Scroll
    ============================================================ */
-const sections = Array.from(document.querySelectorAll("section"));
+const sections = Array.from(document.querySelectorAll("main section"));
 
 function setActiveNav(id) {
   document.querySelectorAll(".nav a").forEach(a => a.classList.remove("active"));
@@ -36,8 +36,8 @@ function setActiveNav(id) {
   if (active) active.classList.add("active");
 }
 
-window.addEventListener("scroll", () => {
-  const headerH = (header ? header.offsetHeight : 0) + 20;
+function onScroll() {
+  const headerH = (header ? header.offsetHeight : 0) + 30;
   let current = "";
 
   sections.forEach(sec => {
@@ -47,19 +47,26 @@ window.addEventListener("scroll", () => {
   });
 
   if (current) setActiveNav(current);
-});
+}
 
+window.addEventListener("scroll", onScroll);
 window.addEventListener("load", () => {
-  if (sections[0]) setActiveNav("#" + sections[0].id);
+  onScroll();
+  if (location.hash) smoothScrollWithOffset(location.hash);
 });
 
 /* ============================================================
-   3) Lightbox / Preview Gambar
+   3) Lightbox / Preview Gambar (klik gambar = zoom)
    ============================================================ */
 const lightbox = document.createElement("div");
 lightbox.id = "lightbox";
 lightbox.className = "lightbox";
-lightbox.innerHTML = `<img id="lightbox-img" src="" alt="preview">`;
+lightbox.innerHTML = `
+  <div class="lightbox-inner" role="dialog" aria-modal="true" aria-label="Preview gambar">
+    <img id="lightbox-img" src="" alt="preview">
+    <p class="lightbox-hint">Klik area gelap untuk menutup (atau tekan ESC)</p>
+  </div>
+`;
 document.body.appendChild(lightbox);
 
 const lightboxImg = document.getElementById("lightbox-img");
@@ -72,7 +79,16 @@ document.querySelectorAll("img").forEach(img => {
   });
 });
 
-lightbox.addEventListener("click", () => {
-  lightbox.classList.remove("show");
-  lightboxImg.src = "";
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+    lightbox.classList.remove("show");
+    lightboxImg.src = "";
+  }
+});
+
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && lightbox.classList.contains("show")) {
+    lightbox.classList.remove("show");
+    lightboxImg.src = "";
+  }
 });
