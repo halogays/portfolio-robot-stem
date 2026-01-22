@@ -47,21 +47,25 @@
         <h3>2. Tahap Perencanaan</h3>
         <ul>
           <li>Identifikasi masalah: potensi tabrakan robot.</li>
-          <li>Tujuan: robot berhenti otomatis.</li>
-          <li>Teori sains: pengukuran & ketidakpastian.</li>
-          <li>Komponen: Studuino, IR sensor, LED, buzzer, motor, baterai.</li>
+          <li>Tujuan: robot berhenti otomatis saat objek terlalu dekat.</li>
+          <li>Teori sains: besaran & pengukuran (jarak), ketidakpastian pengukuran, pengaruh cahaya pada sensor IR.</li>
+          <li>Komponen: Studuino, IR sensor, LED, buzzer, motor, baterai, ArTec Blocks, kabel.</li>
         </ul>
 
         <h3>3. Desain & Prototyping</h3>
         <p>
-          Kami membuat sketsa awal untuk menentukan posisi motor dan sensor.
-          Sistem mengikuti prinsip <b>Input – Process – Output</b>.
+          Kami membuat sketsa awal untuk menentukan posisi motor dan sensor. Sistem mengikuti prinsip
+          <b>Input – Process – Output</b>.
         </p>
+        <ul>
+          <li><b>Input:</b> IR Photoreflector membaca nilai pantulan dari objek.</li>
+          <li><b>Process:</b> Studuino membandingkan nilai sensor dengan threshold.</li>
+          <li><b>Output:</b> motor jalan/stop + LED/buzzer menyala saat kondisi bahaya.</li>
+        </ul>
 
         <h3>4. Implementasi & Coding</h3>
         <p>
-          Program dibuat menggunakan aplikasi Studuino (block coding).
-          Logika utama:
+          Program dibuat menggunakan aplikasi Studuino (block coding). Logika utama:
         </p>
         <ul>
           <li><b>Jika sensor &gt; 7</b> → alarm ON + motor STOP</li>
@@ -70,7 +74,7 @@
 
         <h3>5. Testing & Evaluasi</h3>
         <ul>
-          <li>Uji jarak (5–15 cm).</li>
+          <li>Uji jarak (contoh 5–15 cm).</li>
           <li>Uji cahaya terang–redup.</li>
           <li>Uji konsistensi (pengukuran berulang).</li>
         </ul>
@@ -96,8 +100,7 @@
         <h3>6. Tim & Refleksi</h3>
         <p>
           Tim: <b>Ferdinandus, Leonni, Keyko, Valentino, Christian</b>.
-          Kami belajar bahwa wiring rapi, sensor stabil, dan debug teratur
-          sangat menentukan keberhasilan robot.
+          Kami belajar bahwa wiring rapi, sensor stabil, dan debug teratur sangat menentukan keberhasilan robot.
         </p>
 
         <figure class="main-photo">
@@ -116,46 +119,89 @@
       <div class="stem-long-item">
         <h3>0. Pengenalan Proyek (STEM)</h3>
         <ul>
-          <li><b>Science:</b> Besaran, pengukuran, ketidakpastian.</li>
-          <li><b>Technology:</b> Studuino, ArTec Robo.</li>
-          <li><b>Engineering:</b> desain awal → prototipe → pengujian.</li>
-          <li><b>Mathematics:</b> rata-rata, Δx, error relatif.</li>
+          <li><b>Science:</b> Besaran, pengukuran, ketidakpastian, dan faktor yang mempengaruhi sensor IR.</li>
+          <li><b>Technology:</b> Studuino (block coding) + ArTec Robo (rangka robot).</li>
+          <li><b>Engineering:</b> perencanaan fisik → desain → prototipe → pengujian.</li>
+          <li><b>Mathematics:</b> rata-rata, $\Delta x$, dan error/ketidakpastian relatif (%).</li>
         </ul>
       </div>
 
+      <!-- ===================== SCIENCE (FINAL LENGKAP) ===================== -->
       <div class="stem-long-item">
         <h3>1. Science (Fisika: Besaran & Pengukuran)</h3>
 
-        <h4>Penyebab kesalahan pengukuran</h4>
+        <p>
+          Di proyek ini kami fokus ke besaran <b>panjang/jarak</b>. Karena hasil pengukuran itu bisa berubah-ubah
+          (terutama karena cahaya dan posisi sensor), kami tidak cukup hanya mengukur sekali.
+          Kami melakukan <b>pengukuran berulang</b> dan menghitung <b>ketidakpastian</b> supaya hasilnya lebih bisa dipercaya.
+        </p>
+
+        <h4>A. Apa yang kami ukur</h4>
         <ul>
-          <li>Kesalahan alat.</li>
-          <li>Kesalahan manusia.</li>
-          <li>Kondisi percobaan (cahaya/getaran).</li>
-          <li>Teknik pengukuran kurang sempurna.</li>
+          <li><b>Besaran:</b> jarak (cm).</li>
+          <li><b>Alat pembanding (referensi):</b> mistar.</li>
+          <li><b>Alat/sensor utama:</b> IR Photoreflector (nilai sensor berubah sesuai pantulan IR).</li>
         </ul>
 
-        <h4>Data pengukuran berulang</h4>
-        <p>3.0, 2.8, 2.6, 3.0, 2.8</p>
-
+        <h4>B. Kenapa hasil bisa berbeda (sumber kesalahan)</h4>
         <ul>
-          <li>Rata-rata = 2.84 cm</li>
-          <li>Δx ≈ 0.0748 cm</li>
-          <li>Error relatif ≈ 2.63%</li>
+          <li><b>Kesalahan alat:</b> sensor IR punya batas sensitivitas, mistar punya skala terkecil.</li>
+          <li><b>Kesalahan manusia:</b> posisi mata saat membaca mistar, cara menaruh mistar bisa miring.</li>
+          <li><b>Kondisi percobaan:</b> cahaya terang/redup, permukaan benda, getaran robot.</li>
+          <li><b>Teknik:</b> posisi sensor terlalu tinggi/rendah atau sudut sensor tidak lurus.</li>
+        </ul>
+
+        <h4>C. Rumus yang dipakai</h4>
+        <ul>
+          <li><b>Rata-rata:</b> $\bar{x}=\frac{\sum x}{N}$</li>
+          <li>
+            <b>Ketidakpastian pengukuran tunggal:</b>
+            $\Delta x=\frac{1}{2}\times \text{skala terkecil}$
+            <br>
+            <span class="muted">(dipakai kalau cuma sekali ukur atau menilai ketelitian alat)</span>
+          </li>
+          <li>
+            <b>Ketidakpastian pengukuran berulang (sesuai LKS):</b>
+            $\Delta x=\frac{1}{N}\sqrt{\frac{N\sum x^2-(\sum x)^2}{N-1}}$
+          </li>
+          <li><b>Ketidakpastian relatif:</b> $\frac{\Delta x}{\bar{x}}\times 100\%$</li>
+        </ul>
+
+        <h4>D. Langkah pengolahan data (contoh dari LKS)</h4>
+        <p>Data pengukuran berulang (cm): <b>3.0, 2.8, 2.6, 3.0, 2.8</b></p>
+        <ol>
+          <li>Hitung jumlah data $N$ dan jumlah nilai $\sum x$.</li>
+          <li>Hitung rata-rata $\bar{x}$.</li>
+          <li>Kuadratkan tiap nilai lalu jumlahkan untuk dapat $\sum x^2$.</li>
+          <li>Masukkan ke rumus $\Delta x$ untuk dapat ketidakpastian berulang.</li>
+          <li>Hitung ketidakpastian relatif (%) supaya terlihat seberapa konsisten hasilnya.</li>
+        </ol>
+
+        <h4>E. Hasil olahan (dari langkah di atas)</h4>
+        <ul>
+          <li>Rata-rata $\bar{x}=2.84\ \text{cm}$</li>
+          <li>Ketidakpastian $\Delta x \approx 0.0748\ \text{cm}$</li>
+          <li>Ketidakpastian relatif $\approx 2.63\%$</li>
         </ul>
 
         <div class="grid2">
           <figure class="main-photo">
             <img src="assets/lks.jpg" alt="LKS">
-            <figcaption>LKS: perhitungan ketidakpastian.</figcaption>
+            <figcaption>LKS: langkah pengukuran berulang + perhitungan ketidakpastian.</figcaption>
           </figure>
 
           <figure class="main-photo">
             <img src="assets/praktik_ukur.jpg" alt="Praktik Ukur">
-            <figcaption>Praktik mengukur jarak dengan mistar.</figcaption>
+            <figcaption>Praktik mengukur jarak dengan mistar sebagai pembanding.</figcaption>
           </figure>
         </div>
+
+        <p class="note">
+          Intinya: semakin kecil ketidakpastian relatif, berarti data pengukuran lebih konsisten dan lebih bisa dipercaya.
+        </p>
       </div>
 
+      <!-- ===================== TECHNOLOGY ===================== -->
       <div class="stem-long-item">
         <h3>2. Technology (Studuino & ArTec Robo)</h3>
 
@@ -221,15 +267,16 @@
         </figure>
       </div>
 
+      <!-- ===================== ENGINEERING ===================== -->
       <div class="stem-long-item">
         <h3>3. Engineering (Perencanaan → Desain → Prototipe → Pengujian)</h3>
 
         <h4>A. Perencanaan</h4>
         <ul>
-          <li>Sensor ditempatkan di depan menghadap lurus.</li>
-          <li>Motor di bawah sebagai penggerak utama.</li>
-          <li>Wiring dibuat rapi dan aman.</li>
-          <li>Rangka memakai ArTec Blocks.</li>
+          <li>Sensor ditempatkan di depan menghadap lurus supaya pembacaan stabil.</li>
+          <li>Motor dipasang di bawah sebagai penggerak utama.</li>
+          <li>Wiring dibuat rapi dan aman supaya tidak mengganggu roda.</li>
+          <li>Rangka memakai ArTec Blocks supaya mudah disusun ulang saat evaluasi.</li>
         </ul>
 
         <h4>B. Desain Awal</h4>
@@ -260,7 +307,7 @@
         </p>
       </div>
 
-      <!-- ===== MATHEMATICS (FINAL LENGKAP) ===== -->
+      <!-- ===================== MATHEMATICS (FINAL LENGKAP) ===================== -->
       <div class="stem-long-item">
         <h3>4. Mathematics (Langkah Hitung Rata-rata, Ketidakpastian, dan Error Relatif)</h3>
 
@@ -375,221 +422,10 @@
 
   <script src="script.js"></script>
 
-  <script>
-    window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
-  </script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</body>
-  </html>
-    <!-- =======================================================
-         II. STEM
-    ======================================================= -->
-    <section id="stem" class="card">
-      <h2 class="section-title">II. Pendekatan STEM</h2>
-      <hr>
-
-      <div class="stem-long-item">
-        <h3>0. Pengenalan Proyek (STEM)</h3>
-        <ul>
-          <li><b>Science:</b> Besaran, pengukuran, ketidakpastian.</li>
-          <li><b>Technology:</b> Studuino, ArTec Robo.</li>
-          <li><b>Engineering:</b> desain awal → prototipe → pengujian.</li>
-          <li><b>Mathematics:</b> rata-rata, Δx, error relatif.</li>
-        </ul>
-      </div>
-
-      <!-- SCIENCE -->
-      <div class="stem-long-item">
-        <h3>1. Science (Fisika: Besaran & Pengukuran)</h3>
-
-        <h4>Penyebab kesalahan pengukuran</h4>
-        <ul>
-          <li>Kesalahan alat.</li>
-          <li>Kesalahan manusia.</li>
-          <li>Kondisi percobaan (cahaya/getaran).</li>
-          <li>Teknik pengukuran kurang sempurna.</li>
-        </ul>
-
-        <h4>Data pengukuran berulang</h4>
-        <p>3.0, 2.8, 2.6, 3.0, 2.8</p>
-
-        <ul>
-          <li>Rata-rata = 2.84 cm</li>
-          <li>Δx ≈ 0.0748 cm</li>
-          <li>Error relatif ≈ 2.63%</li>
-        </ul>
-
-        <div class="grid2">
-          <figure class="main-photo">
-            <img src="assets/lks.jpg">
-            <figcaption>LKS: perhitungan ketidakpastian.</figcaption>
-          </figure>
-
-          <figure class="main-photo">
-            <img src="assets/praktik_ukur.jpg">
-            <figcaption>Praktik mengukur jarak dengan mistar.</figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <!-- TECHNOLOGY -->
-      <div class="stem-long-item">
-        <h3>2. Technology (Studuino & ArTec Robo)</h3>
-
-        <h4>A. Pengenalan Studuino</h4>
-        <p>
-          Studuino adalah mikrokontroler pendidikan dengan port input-output dan motor,
-          memudahkan siswa merakit robot tanpa solder.
-        </p>
-
-        <ul>
-          <li>Membaca sensor (A1)</li>
-          <li>Menjalankan logika program</li>
-          <li>Mengendalikan LED, buzzer, dan motor</li>
-        </ul>
-
-        <h4>B. Pengenalan ArTec Robo</h4>
-        <p>
-          ArTec Blocks adalah balok modular yang kuat dan mudah dirakit,
-          cocok untuk membangun rangka robot yang stabil.
-        </p>
-
-        <ul>
-          <li>Mudah dimodifikasi</li>
-          <li>Struktur stabil</li>
-          <li>Posisi sensor dapat diatur presisi</li>
-        </ul>
-
-        <h4>C. Komponen</h4>
-        <ul>
-          <li>IR Photoreflector – A1</li>
-          <li>LED – A0</li>
-          <li>Buzzer – A2</li>
-          <li>Motor – M1</li>
-          <li>Baterai</li>
-        </ul>
-
-        <h4>D. Cara Kerja</h4>
-        <ul>
-          <li>Sensor &gt; 7 → alarm ON & motor STOP</li>
-          <li>Sensor ≤ 7 → motor jalan</li>
-        </ul>
-
-        <figure class="main-photo">
-          <img src="assets/kode.jpg">
-          <figcaption>Screenshot coding Studuino.</figcaption>
-        </figure>
-
-        <figure class="main-photo">
-          <img src="assets/log.jpg">
-          <figcaption>Log debugging: catatan perbaikan program.</figcaption>
-        </figure>
-
-        <figure class="main-photo">
-          <img src="assets/flowchart.jpg">
-          <figcaption>Flowchart sistem.</figcaption>
-        </figure>
-      </div>
-
-      <!-- ENGINEERING -->
-      <div class="stem-long-item">
-        <h3>3. Engineering (Perencanaan → Desain → Prototipe → Pengujian)</h3>
-
-        <h4>A. Perencanaan</h4>
-        <ul>
-          <li>Sensor ditempatkan di depan menghadap lurus.</li>
-          <li>Motor di bawah sebagai penggerak utama.</li>
-          <li>Wiring dibuat rapi & aman.</li>
-          <li>Rangka memakai ArTec Blocks.</li>
-        </ul>
-
-        <h4>B. Desain Awal</h4>
-        <figure class="main-photo">
-          <img src="assets/sketsa.jpg">
-          <figcaption>Sketsa awal perencanaan robot.</figcaption>
-        </figure>
-
-        <h4>C. Prototipe</h4>
-        <figure class="main-photo">
-          <img src="assets/robot.jpg">
-          <figcaption>Prototipe final Smart Distance Tracker.</figcaption>
-        </figure>
-
-        <h4>D. Pengujian Prototipe</h4>
-        <p>Berikut hasil tes robot setelah dirakit:</p>
-
-        <div class="note">
-          <b>Video Hasil Uji:</b><br>
-          <a href="https://youtu.be/0XWDEHIWLls?si=htdQVasCmSPMHdn_" target="_blank">
-            https://youtu.be/0XWDEHIWLls?si=htdQVasCmSPMHdn_
-          </a>
-        </div>
-
-        <p>
-          Robot berhasil berhenti otomatis saat objek mendekat.
-          Pada cahaya sangat terang sensor sedikit kurang stabil,
-          sehingga threshold dan posisi sensor perlu dikalibrasi ulang.
-        </p>
-      </div>
-
-      <!-- MATH -->
-      <div class="stem-long-item">
-        <h3>4. Mathematics (Ketidakpastian)</h3>
-
-        <table class="data">
-          <thead>
-            <tr><th>Pengukuran</th><th>Nilai (cm)</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>1</td><td>3.0</td></tr>
-            <tr><td>2</td><td>2.8</td></tr>
-            <tr><td>3</td><td>2.6</td></tr>
-            <tr><td>4</td><td>3.0</td></tr>
-            <tr><td>5</td><td>2.8</td></tr>
-          </tbody>
-        </table>
-
-        <ul>
-          <li>Rata-rata: 2.84 cm</li>
-          <li>Δx ≈ 0.0748 cm</li>
-          <li>Error relatif ≈ 2.63%</li>
-        </ul>
-      </div>
-
-      <!-- TIM -->
-      <div class="stem-long-item">
-        <h3>5. Tim & Refleksi</h3>
-        <ul>
-          <li>Ferdinandus – Coding & Website</li>
-          <li>Leonni – Website & logika kode</li>
-          <li>Keyko – Perakitan</li>
-          <li>Valentino – Hardware</li>
-          <li>Christian – Dokumentasi</li>
-        </ul>
-
-        <h4>Refleksi</h4>
-        <ul>
-          <li>Sensor perlu kalibrasi agar stabil.</li>
-          <li>Wiring rapi = pembacaan lebih konsisten.</li>
-          <li>Debugging membantu menyempurnakan logika.</li>
-        </ul>
-      </div>
-
-    </section>
-
-    <footer class="footer">
-      <p>"Kegagalan hanyalah kesempatan untuk memulai lagi dengan lebih cerdas."</p>
-      <p>© 2024 Tim Alpha - Smart Distance Tracker</p>
-    </footer>
-
-  </main>
-
-  <script src="script.js"></script>
-
+  <!-- MathJax untuk rumus -->
   <script>
     window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
   </script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 </html>
-
